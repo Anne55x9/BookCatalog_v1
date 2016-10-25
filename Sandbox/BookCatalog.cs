@@ -33,6 +33,7 @@ namespace Sandbox
             }
         }
 
+        // the parameter isbn you look up is the equal parameter for the abook objects ISBN number which is called when using the get method.
         public Book LookupBook(string isbn)
         {
             Book matchingBook = null;
