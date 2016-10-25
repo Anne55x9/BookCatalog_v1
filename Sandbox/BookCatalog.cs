@@ -16,6 +16,8 @@ namespace Sandbox
 
         public void AddBook(Book aBook)
         {
+            books.Add(aBook);
+
             // Add code that can add the given Book object to the list
         }
 
@@ -23,11 +25,25 @@ namespace Sandbox
         {
             // Add code that can print all books in the list
             // Hint: You will need a repetition statement
+
+            foreach (Book aBook in books)
+            {
+                //aBook.GetAllInformation();
+                Console.WriteLine($"{aBook.GetAllInformation()}");
+            }
         }
 
         public Book LookupBook(string isbn)
         {
             Book matchingBook = null;
+
+            foreach (Book aBook in books)
+            {
+                if (aBook.GetISBN() == isbn)
+                {
+                    matchingBook = aBook;
+                }                     
+            }
 
             // Add code that will find a book (if any) in the list
             // which has a matching ISBN number. The variable matchingBook
